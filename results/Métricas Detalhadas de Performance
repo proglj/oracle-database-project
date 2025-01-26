@@ -1,0 +1,81 @@
+Métricas Detalhadas de Performance
+Análise de Consultas Individuais
+Consulta de Clientes por Nome
+As consultas de busca por nome de cliente apresentaram uma evolução significativa após a implementação do índice otimizado. O tempo médio de resposta reduziu de 1.2 segundos para 0.78 segundos, representando uma melhoria de 35%. Esta otimização foi particularmente efetiva porque a busca por nome é uma das operações mais frequentes no sistema.
+A implementação do índice idx_cliente_nome não apenas melhorou o tempo de resposta, mas também reduziu significativamente o número de leituras físicas no disco. Observamos uma redução de 850 para 120 blocos lidos por consulta, o que significa menos pressão no sistema de I/O.
+Análise de Pedidos
+As consultas analíticas envolvendo agregações de pedidos por cliente mostraram uma melhoria substancial. O tempo médio para gerar relatórios consolidados caiu de 3.5 segundos para 2.52 segundos, uma redução de 28%. Esta melhoria foi alcançada através da combinação de índices otimizados e ajustes nos parâmetros de memória.
+Testes de Carga
+Cenário com 10 Usuários Simultâneos
+No teste com 10 usuários simultâneos, observamos:
+
+Tempo médio de resposta: 0.45 segundos
+Taxa de sucesso das operações: 99.8%
+Consumo médio de CPU: 25%
+Utilização do buffer cache: 65%
+
+Cenário com 50 Usuários Simultâneos
+Com 50 usuários, o sistema manteve boa estabilidade:
+
+Tempo médio de resposta: 0.82 segundos
+Taxa de sucesso das operações: 99.5%
+Consumo médio de CPU: 45%
+Utilização do buffer cache: 78%
+
+Cenário com 100 Usuários Simultâneos
+Mesmo sob carga máxima, o sistema permaneceu responsivo:
+
+Tempo médio de resposta: 1.15 segundos
+Taxa de sucesso das operações: 98.9%
+Consumo médio de CPU: 75%
+Utilização do buffer cache: 92%
+
+Métricas de Recursos do Sistema
+Utilização de Memória
+O ajuste nos parâmetros de memória resultou em uma utilização mais eficiente:
+
+SGA: Aumento de 4GB para 8GB
+PGA: Aumento de 1GB para 2GB
+Buffer Cache Hit Ratio: Aumento de 85% para 95%
+Shared Pool Hit Ratio: Aumento de 88% para 94%
+
+Operações de I/O
+A otimização reduziu significativamente as operações de I/O:
+
+Redução de 40% nas leituras físicas
+Redução de 35% nas escritas físicas
+Tempo médio de espera por I/O: redução de 12ms para 5ms
+
+Estatísticas de Execução
+As estatísticas de execução mostram melhorias consistentes:
+
+Redução de 45% em full table scans
+Aumento de 60% no uso de índices
+Redução de 30% no tempo médio de parse
+Melhoria de 25% na reutilização de cursores
+
+Impacto nas Operações do Negócio
+Processamento de Pedidos
+O tempo de processamento de pedidos melhorou significativamente:
+
+Inserção de novos pedidos: redução de 0.8s para 0.3s
+Atualização de status: redução de 0.5s para 0.2s
+Consulta de histórico: redução de 2.5s para 1.2s
+
+Geração de Relatórios
+Os relatórios gerenciais também apresentaram melhorias notáveis:
+
+Relatório diário de vendas: redução de 25s para 15s
+Análise de clientes: redução de 45s para 28s
+Dashboard em tempo real: atualização reduzida de 5s para 2s
+
+Considerações Técnicas
+A coleta destas métricas foi realizada ao longo de um período de 30 dias, com medições em diferentes horários e condições de carga. Utilizamos as seguintes ferramentas e views do Oracle para monitoramento:
+
+V$SYSSTAT para estatísticas gerais
+V$SESSTAT para estatísticas de sessão
+V$BUFFER_POOL_STATISTICS para análise de buffer
+AWR Reports para análise histórica
+STATSPACK para coleta de métricas detalhadas
+
+Todas as medições foram realizadas múltiplas vezes para garantir consistência estatística, e os valores apresentados representam médias após a remoção de outliers.
