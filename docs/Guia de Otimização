@@ -1,0 +1,25 @@
+Guia de Otimização
+Estratégias Implementadas
+1. Otimização de Queries
+
+Uso de índices apropriados
+Reescrita de queries complexas
+Hints para melhor performance
+
+2. Configuração de Memória
+
+Ajuste do SGA
+Configuração do PGA
+Buffer cache otimizado
+
+3. Otimização de I/O
+
+Distribuição de tablespaces
+Configuração de REDO logs
+Gestão de arquivos temporários
+
+4. Monitoramento
+
+AWR Reports
+Alertas automáticos
+Métricas de performance
