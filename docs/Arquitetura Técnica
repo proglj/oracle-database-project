@@ -1,0 +1,27 @@
+Arquitetura Técnica
+Visão Geral do Sistema
+Sistema de banco de dados Oracle otimizado para alto desempenho e confiabilidade.
+Componentes Principais
+
+Oracle Database 11g
+Tablespaces otimizados
+Estruturas de memória ajustadas
+Jobs automatizados
+
+Recursos de Hardware
+
+CPU: 4 cores
+RAM: 16GB
+Storage: 500GB SSD
+
+Requisitos de Software
+
+Oracle Database 11g Enterprise Edition
+Oracle SQL Developer
+PL/SQL Developer
+
+Arquitetura de Backup
+
+Backup incremental diário
+Backup full semanal
+Retenção: 30 dias
