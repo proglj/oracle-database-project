@@ -1,0 +1,30 @@
+Design do Banco de Dados
+Modelo de Dados
+Tabelas Principais
+
+Clientes
+Pedidos
+Produtos
+Estoque
+
+Índices Otimizados
+
+idx_cliente_email
+idx_cliente_nome
+idx_pedido_data
+
+Visões Materializadas
+
+vw_clientes_ativos
+vw_vendas_mensais
+
+Particionamento
+
+Tabelas particionadas por data
+Índices locais por partição
+
+Segurança
+
+Roles definidas por função
+Auditoria ativada
+Backup automático
