@@ -1,22 +1,40 @@
-# oracle-database-project
-Projeto de otimização de banco de dados Oracle com redução de 30% no tempo de processamento
 # Projeto de Otimização Oracle Database
 
-Projeto de banco de dados completo com implementação de tabelas, índices e procedures que resultou em redução de 30% no tempo de processamento.
+Scripts de otimização e administração de banco de dados Oracle com redução de 30% no tempo de processamento.
+
+## Estrutura do Projeto
+
+### Estruturas Base
+- `tabelas.sql`: Definição das estruturas
+- `indices.sql`: Índices otimizados
+- `views.sql`: Views materializadas
+- `procedures.sql`: Stored procedures
+- `packages.sql`: Pacotes PL/SQL
+
+### Performance
+- `performance.sql`: Monitoramento
+- `otimizacao.sql`: Scripts de otimização
+- `metricas.sql`: Coleta de métricas
+- `estatisticas.sql`: Análise estatística
+
+### Segurança
+- `backup.sql`: Rotinas de backup
+- `security.sql`: Controles de acesso
+- `audit.sql`: Trilhas de auditoria
+- `roles.sql`: Gestão de permissões
+
+### Monitoramento
+- `monitor.sql`: Monitoramento geral
+- `alerts.sql`: Sistema de alertas
+- `logs.sql`: Gestão de logs
 
 ## Tecnologias
 - Oracle Database 11g
-- SQL
 - PL/SQL
 - Oracle SQL Developer
-
-## Implementações
-- Design de tabelas otimizadas
-- Índices estratégicos
-- Procedures para automação
-- Queries otimizadas
 
 ## Resultados
 - Redução de 30% no tempo de processamento
 - Melhor organização dos dados
-- Automação de processos
+- Automatização de processos críticos
+- Monitoramento em tempo real
