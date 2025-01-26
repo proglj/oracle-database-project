@@ -1,0 +1,45 @@
+Recomendações de Manutenção Contínua
+Monitoramento Regular
+O sucesso das otimizações implementadas depende de um monitoramento constante e ajustes periódicos. Recomendamos a seguinte rotina de manutenção:
+Diariamente
+É fundamental verificar as estatísticas do banco de dados todos os dias. O administrador deve analisar os logs de performance e verificar se os tempos de resposta estão dentro dos parâmetros esperados. Qualquer degradação significativa deve ser investigada imediatamente.
+As principais métricas a serem monitoradas diariamente são o tempo de resposta das queries principais, uso de CPU, operações de I/O e número de sessões ativas. Variações superiores a 20% em qualquer destes indicadores devem ser investigadas.
+Semanalmente
+Uma vez por semana, é necessário realizar uma análise mais profunda das estatísticas acumuladas. Isto inclui a verificação dos planos de execução das queries principais e a análise de tendências de crescimento das tabelas. Se necessário, deve-se atualizar as estatísticas do banco de dados e reorganizar índices que apresentem fragmentação.
+Mensalmente
+Todo mês deve ser feita uma revisão completa da performance, incluindo a geração de relatórios AWR detalhados e análise de tendências de longo prazo. Este é também o momento de avaliar se as configurações de memória ainda estão adequadas ao volume de dados.
+Ajustes Preventivos
+Para manter o desempenho otimizado, recomendamos os seguintes ajustes preventivos:
+Gestão de Índices
+É importante monitorar o uso dos índices e sua efetividade. Índices que não são utilizados devem ser removidos, enquanto novos padrões de acesso podem exigir a criação de novos índices. A fragmentação dos índices deve ser monitorada e tratada regularmente.
+Gestão de Estatísticas
+As estatísticas do banco de dados devem ser atualizadas regularmente, especialmente para tabelas que sofrem muitas alterações. Recomendamos um job automático para atualizar estatísticas durante janelas de baixo uso do sistema.
+Particionamento
+À medida que as tabelas crescem, pode ser necessário implementar estratégias de particionamento. Recomendamos avaliar a necessidade de particionamento quando uma tabela ultrapassar 1 milhão de registros.
+Plano de Crescimento
+Para acomodar o crescimento futuro do banco de dados, recomendamos:
+Curto Prazo (3-6 meses)
+Monitorar o crescimento das tabelas principais e planejar expansões de tablespace quando necessário. Avaliar a necessidade de ajustes nos parâmetros de memória baseado nas tendências de uso.
+Médio Prazo (6-12 meses)
+Considerar a implementação de particionamento para tabelas grandes e avaliar a necessidade de arquivamento de dados históricos. Planejar possíveis upgrades de hardware baseado nas projeções de crescimento.
+Longo Prazo (1-2 anos)
+Avaliar a necessidade de implementar soluções de alta disponibilidade como RAC ou Data Guard. Considerar estratégias de archiving para dados antigos e planejar possíveis migrações de versão do Oracle.
+Procedimentos de Emergência
+Em caso de degradação súbita de performance, seguir este procedimento:
+
+Identificar queries problemáticas através das views de performance
+Analisar planos de execução e comparar com o histórico
+Verificar mudanças recentes no padrão de uso ou volume de dados
+Aplicar correções emergenciais se necessário (ajuste de memória, rebuild de índices)
+Documentar o incidente e as ações tomadas
+
+Documentação
+Todas as alterações e ajustes devem ser documentados detalhadamente, incluindo:
+
+Motivo da alteração
+Métricas antes e depois
+Scripts utilizados
+Impacto observado
+Data e responsável pela alteração
+
+Esta documentação é essencial para manter um histórico das otimizações e facilitar futuras análises e troubleshooting.
